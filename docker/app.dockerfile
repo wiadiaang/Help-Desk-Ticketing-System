@@ -22,20 +22,25 @@ RUN docker-php-ext-install pdo_pgsql mysqli pdo pdo_mysql  gd zip pcntl
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+
+
 # Set working directory
 WORKDIR /var/www/app
 
 # Copy package files first (better for caching)
-COPY package.json package-lock.json ./
+# COPY package.json package-lock.json ./
 
-# Install npm dependencies
-RUN npm install
+# # Install npm dependencies
+# RUN npm install
 
-# Copy the rest of the application
-COPY . .
+# # Copy the rest of the application
+ COPY . .
 
-# Run Vite build during image build (optional, for production)
-RUN npm run build
+ #composer install
+# RUN composer update
+
+# # Run Vite build during image build (optional, for production)
+# RUN npm run build
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/app
@@ -44,4 +49,4 @@ RUN chown -R www-data:www-data /var/www/app
 # USER www-data
 
 # Start PHP-FPM (main service)
-# CMD ["php"]
+# CMD ["php",'artisan','migrate']
