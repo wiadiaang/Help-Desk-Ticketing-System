@@ -1,0 +1,80 @@
+version: "3.8"
+services:
+  app:
+    container_name: hdts_app_container
+    restart: unless-stopped
+    build:
+      context: ./
+      dockerfile: ./docker/app.dockerfile
+    volumes:
+      - ./:/var/www/app
+      - vendor_volume:/var/www/app/vendor
+    networks:
+      - localNetwork
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  nginx:
+    container_name: hdts_nginx_container
+    image: nginx:1.19-alpine
+    restart: unless-stopped
+    ports:
+      - "${NGINX_PORT_FORWARD:-8808}:80"
+    volumes:
+      - ./:/var/www/app
+      - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - localNetwork
+
+  # queue:   
+  #   container_name: app-queue
+  #   restart: unless-stopped    
+  #   environment:
+  #       - LOG_CHANNEL=daily        
+  #       - QUEUE_CONNECTION=database
+  #       - XDG_CONFIG_HOME=/tmp/artisan-tinker    
+  #   build:
+  #     context: ./      
+  #     dockerfile: ./docker/queue.dockerfile
+  #   depends_on:        
+  #       - app
+  #   volumes:        
+  #       - './:/var/www/app'
+  #       - vendor_app:/var/www/app/vendor
+  #   user: "www-data"    
+  #   networks:
+  #       - localNetwork    
+  #   extra_hosts:
+  #     - "host.docker.internal:host-gateway"
+
+  # reverb:
+  #   container_name: reverb_sosmed
+  #   restart: unless-stopped  
+  #   build:
+  #     context: ./      
+  #     dockerfile: ./docker/reverb.dockerfile
+  #   # command: php artisan reverb:start
+  #   volumes:        
+  #       - './:/var/www/app'
+  #       - vendor_app:/var/www/app/vendor
+  #   user: "www-data"    
+  #   networks:
+  #       - localNetwork    
+  #   extra_hosts:
+  #     - "host.docker.internal:host-gateway"
+
+  #   ports:
+  #     - 6001:6001  # default port Laravel Reverb
+  #   depends_on:
+  #     - app
+
+
+networks:
+  localNetwork:
+    driver: bridge
+
+volumes:
+  vendor_app:
+  vendor_volume:
