@@ -1,3 +1,3 @@
-{{-- @extends('layouts.main') --}}
+@extends('layouts.main')
 
-{{ 'apa kabar'}}
+@section('title','Dashboard')

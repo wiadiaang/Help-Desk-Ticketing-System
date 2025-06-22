@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
     
-      <title>{{ config('app.name') }}</title>
+      <title>@yield('title')</title>
     
 
     
@@ -107,6 +107,7 @@
 
 <!-- Menu -->
 
+@include('layouts.sidebar')
 
 <!-- / Menu -->
 
@@ -121,12 +122,12 @@
 
 <!-- Navbar -->
 
-
+@include('layouts.navbar')
 <!-- / Navbar -->
       
 
-      <!-- Content wrapper -->
-      <div class="content-wrapper">
+<!-- Content wrapper -->
+<div class="content-wrapper">
         <!-- Content -->
         <div class="container-xxl flex-grow-1 container-p-y">
           
@@ -747,7 +748,7 @@
         
 
 <!-- Footer -->
-
+@include('layouts.footer')
 <!-- / Footer -->
 
         
