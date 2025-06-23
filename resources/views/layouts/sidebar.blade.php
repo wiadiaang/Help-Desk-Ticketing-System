@@ -56,17 +56,13 @@
       <ul class="menu-inner py-1">
         <!-- Dashboards -->
         <li class="menu-item">
-          <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <a  href="#" class="menu-link menu-toggle">
             <i class="menu-icon icon-base bx bx-home-smile"></i>
             <div data-i18n="Dashboards">Dashboards</div>
             <div class="badge text-bg-danger rounded-pill ms-auto">5</div>
           </a>
           <ul class="menu-sub">
-            <li class="menu-item">
-              <a href="dashboards-analytics.html" class="menu-link">
-                <div data-i18n="Analytics">Analytics</div>
-              </a>
-            </li>
+           
             <li class="menu-item">
               <a href="dashboards-crm.html" class="menu-link">
                 <div data-i18n="CRM">CRM</div>
@@ -381,15 +377,15 @@
           </a>
           <ul class="menu-sub">
             <li class="menu-item active">
-              <a href="app-logistics-dashboard.html" class="menu-link">
+              <a wire:navigate href="{{ url('/dashboard')}}" class="menu-link">
                 <div data-i18n="Dashboard">Dashboard</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="app-logistics-fleet.html" class="menu-link">
-                <div data-i18n="Fleet">Fleet</div>
-              </a>
-            </li>
+                <a wire:navigate href="{{ url('/user')}}" class="menu-link">
+                  <div data-i18n="Analytics">User</div>
+                </a>
+              </li>
           </ul>
         </li>
         <li class="menu-item">
