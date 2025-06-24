@@ -6,12 +6,13 @@ use App\Livewire\Backend\Dashboard\DashboardIndex;
 use App\Livewire\Backend\User\UserIndex;
 use App\Livewire\Backend\Category\CategoryIndex;
 use App\Livewire\Backend\Progress\ProgressIndex;
+use App\Livewire\Auth\Login;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/login',Login::class);
 Route::get('/dashboard',DashboardIndex::class);
 Route::get('/user',UserIndex::class);
 Route::get('/category',CategoryIndex::class);
