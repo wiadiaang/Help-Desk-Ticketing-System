@@ -78,8 +78,8 @@
               </a>
             </li>
             <li class="menu-item">
-              <a href="{{ url('/progress') }}" class="menu-link">
-                <div data-i18n="Progress">Progress</div>
+              <a href="{{ url('/status') }}" class="menu-link">
+                <div data-i18n="Status">Status</div>
               </a>
             </li>
             <li class="menu-item">
