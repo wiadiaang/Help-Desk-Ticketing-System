@@ -87,6 +87,11 @@
                 <div data-i18n="Priority">Priority</div>
               </a>
             </li>
+             <li class="menu-item">
+              <a href="{{ url('/department') }}" class="menu-link">
+                <div data-i18n="Department">Department</div>
+              </a>
+            </li>
             <li class="menu-item">
               <a href="{{ url('/user') }}" class="menu-link">
                 <div data-i18n="User">User</div>

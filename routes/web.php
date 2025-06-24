@@ -7,6 +7,7 @@ use App\Livewire\Backend\User\UserIndex;
 use App\Livewire\Backend\Category\CategoryIndex;
 use App\Livewire\Backend\Progress\ProgressIndex;
 use App\Livewire\Auth\Login;
+use App\Livewire\Backend\Department\DepartmentIndex;
 use App\Livewire\Backend\Priority\PriorityIndex;
 
 Route::get('/', function () {
@@ -19,6 +20,7 @@ Route::get('/user',UserIndex::class);
 Route::get('/category',CategoryIndex::class);
 Route::get('/progress',ProgressIndex::class);
 Route::get('/priority',PriorityIndex::class);
+Route::get('/department',DepartmentIndex::class);
 
     
 
