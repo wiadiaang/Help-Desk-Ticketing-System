@@ -29,22 +29,10 @@
         <link rel="canonical" href="https://themeselection.com/item/sneat-dashboard-pro-bootstrap/" />
       
     
-      <script>
-        (function (w, d, s, l, i) {
-          w[l] = w[l] || [];
-          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-          var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s),
-            dl = l != 'dataLayer' ? '&l=' + l : '';
-          j.async = true;
-          j.src = '../../../../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
-          f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-5DDHKGP');
-      </script>
-      <!-- End Google Tag Manager -->
+
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/img/favicon/favicon.ico" />
+    {{-- <link rel="icon" type="image/x-icon" href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/img/favicon/favicon.ico" /> --}}
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
@@ -186,7 +174,7 @@
         
     <script src="{{ asset('backend/vendor/libs/hammer/hammer.js') }}"></script>
         
-    <script src="{{ asset('backend/vendor/libs/i18n/i18n.js') }}"></script>
+    {{-- <script src="{{ asset('backend/vendor/libs/i18n/i18n.js') }}"></script> --}}
         
       
     <script src="{{ asset('backend/vendor/js/menu.js') }}"></script>
