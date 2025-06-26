@@ -10,4 +10,14 @@ class Login extends Component
     {
         return view('livewire.auth.login');
     }
+
+    public function login()
+    {
+        $this->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        
+    }
 }
