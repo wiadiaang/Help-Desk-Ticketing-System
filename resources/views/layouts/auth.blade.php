@@ -12,6 +12,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     
       <title>{{ env('APP_NAME')}}</title>
@@ -62,6 +63,9 @@
     <!-- Page CSS -->
     <!-- Page -->
   <link rel="stylesheet" href="{{ asset('backend/vendor/css/pages/page-auth.css')}}" />
+
+    <!-- Livewire Styles -->
+    @livewireStyles
 
    
       <script src="{{ asset('backend/js/config.js')}}"></script>
@@ -169,6 +173,9 @@
 
     <!-- Page JS -->
     <script src="{{ asset('backend/js/pages-auth.js')}}"></script>
+
+    <!-- Livewire Scripts -->
+    @livewireScripts
     
   </body>
 </html>
