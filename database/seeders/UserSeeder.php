@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
             'email' => 'aang@gmail.com',
             'password' => Hash::make('Baracuda!#'), // Use custom password
             'remember_token' => Str::random(60), 
+            'role' => 'Admin',
         ]);
     }
 }
